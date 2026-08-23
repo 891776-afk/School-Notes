@@ -9,5 +9,5 @@ body {
 .title {
     position: absolute;
     top: 20px;
-    left: 30px;
+    left: -30px;
 }
