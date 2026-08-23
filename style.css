@@ -1,13 +1,13 @@
 body {
     background-color: rgb(5, 33, 75);
-    font-family: system-ui, Arial;
     color: white;
+    font-family: Arial; 
     text-align: center;
-    padding: 50px;
+    padding: 40px;
 }
 
 .title {
     position: absolute;
     top: 20px;
-    right: 30px;
+    left: 30px;
 }
