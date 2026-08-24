@@ -35,6 +35,6 @@ body {
 
 .NoteButton {
     background-color: rgb(17, 35, 67);
-    border-radius: 50px;
+    border-radius: 10px;
     height: 30px;
 }
