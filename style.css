@@ -32,3 +32,9 @@ body {
     background-color: rgb(7, 20, 43);
     border-radius: 20px;
 }
+
+.NoteButton {
+    background-color: rgb(17, 35, 67);
+    border-radius: 50px;
+    height: 10px;
+}
