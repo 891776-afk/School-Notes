@@ -18,3 +18,10 @@ body {
     top: 20px;
     right: 30px;
 }
+
+.square {
+
+    width: 150px;
+    height: 250px;
+    background-color: rgb(7, 20, 43);
+}
