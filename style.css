@@ -27,8 +27,8 @@ body {
 }
 
 .square {
-    width: 1750px;
-    height: 1550px;
+    width: 1000px;
+    height: 900px;
     background-color: rgb(7, 20, 43);
     border-radius: 20px;
 }
