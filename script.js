@@ -1,7 +1,10 @@
-const button =
+const noteButton =
 document.getElementById("noteButton");
+const notePopup =
+document.getElementById("notePopup");
 
-button.addEventListener("click",
-function() {
-    alert("Hello Test");
-});
+noteButton.addEventListener("click",
+    function() {
+        notePopup.style.display = "flex";
+    }
+);
