@@ -31,6 +31,7 @@ body {
     height: 90vh;
     background-color: rgb(7, 20, 43);
     border-radius: 20px;
+    position: relative;
 }
 
 .NoteButton {
@@ -42,4 +43,7 @@ body {
     font-size: 16px;
     font-family: Arial;
     cursor: pointer;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
 }
