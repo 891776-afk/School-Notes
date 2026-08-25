@@ -58,8 +58,6 @@ body {
     font-family: Arial;
     cursor: pointer;
     position: absolute;
-    bottom: 25px;
-    right: 25px;
 }
 
 .SaveButton {
@@ -71,9 +69,6 @@ body {
     font-size: 16px;
     font-family: Arial;
     cursor: pointer;
-    position: absolute;
-    bottom: 25px;
-    right: 25px;
 }
 
 .popup {
