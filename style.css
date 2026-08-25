@@ -9,13 +9,13 @@ body {
 
 .title {
     position: absolute;
-    top: 15px;
+    top: 12px;
     left: 30px;
 }
 
 .Sub {
     position: absolute;
-    top: 20px;
+    top: 15px;
     right: 30px;
 }
 
