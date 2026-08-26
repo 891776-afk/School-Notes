@@ -38,10 +38,10 @@ backButton.addEventListener("click",
 saveButton.addEventListener("click",
     function() {
 
-        const title = noteTitle.Value;
+        const title = noteTitle.value;
         const description =
-    noteDescription.Value;
-        const notes = noteNotes.Value;
+    noteDescription.value;
+        const notes = noteNotes.value;
 
         const noteCard =
     document.createElement("div");
@@ -49,7 +49,7 @@ saveButton.addEventListener("click",
         noteCard.classList.add("note-card");
 
         noteCard.innerHTML = `
-            <h3>${Title}</h3>
+            <h3>${title}</h3>
             <p>${description}</p>
             <p>${notes}</p>
         `;
