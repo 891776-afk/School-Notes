@@ -53,9 +53,14 @@ body {
     color: white;
     border: none;
     border-radius: 12px;
+    padding: 12px 24px;
     font-size: 16px;
     font-family: Arial;
     cursor: pointer;
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    
 }
 
 .SaveButton {
@@ -66,6 +71,7 @@ body {
     font-size: 16px;
     font-family: Arial;
     cursor: pointer;
+    height: 10;
 }
 
 .popup {
