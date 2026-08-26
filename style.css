@@ -121,7 +121,7 @@ body {
 
 .notes-grid {
     display: grid;
-    grid-template-columns: repeat(4,
+    grid-template-columns: repeat(3,
 1fr);
     gap: 20px;
 
