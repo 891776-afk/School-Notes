@@ -47,7 +47,17 @@ saveButton.addEventListener("click",
         noteCard.innerHTML = `
             <h3>${title}</h3>
             <p>${notes}</p>
+            <button class="completeButton">Mark Complete</button>
         `;
+
+        const completeButton =
+
+        noteCard.querySelector(".completeButton");
+
+        completeButton.addEventListener("click",
+        function() {
+            noteCard.remove();
+        });
 
         notesGrid.appendChild(noteCard);
         notePopup.style.display = "none";
