@@ -38,7 +38,7 @@ backButton.addEventListener("click",
 saveButton.addEventListener("click",
     function() {
 
-        const title = noteTitle.ariaValueMax;
+        const title = noteTitle.Value;
         const description =
     noteDescription.Value;
         const notes = noteNotes.Value;
