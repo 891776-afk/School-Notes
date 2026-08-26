@@ -118,3 +118,22 @@ body {
     height: 80px;
     resize: none;
 }
+
+.notes-grid {
+    display: grid;
+    grid-template-columns: repeat(3,
+1fr);
+    gap: 20px;
+
+    padding: 30px;
+}
+
+.note-card {
+    background-color: rgb(17, 35, 67);
+
+    padding: 20px;
+
+    border-radius: 15px;
+
+    color: white;
+}
