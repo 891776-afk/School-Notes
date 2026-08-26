@@ -13,9 +13,6 @@ document.getElementById("saveButton");
 const noteTitle =
 document.getElementById("noteTitle");
 
-const noteDescription =
-document.getElementById("noteDescription");
-
 const noteNotes =
 document.getElementById("noteNotes");
 
@@ -39,8 +36,7 @@ saveButton.addEventListener("click",
     function() {
 
         const title = noteTitle.value;
-        const description =
-    noteDescription.value;
+
         const notes = noteNotes.value;
 
         const noteCard =
@@ -50,7 +46,6 @@ saveButton.addEventListener("click",
 
         noteCard.innerHTML = `
             <h3>${title}</h3>
-            <p>${description}</p>
             <p>${notes}</p>
         `;
 
