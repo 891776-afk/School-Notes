@@ -6,7 +6,7 @@
     collection,
     addDoc,
     getDocs,
-  } from "https://www.gstatic.com/firebasejs/12.18.0/firebase-app.js";
+  } from "https://www.gstatic.com/firebasejs/12.18.0/firebase-firestore.js";
 
   const firebaseConfig = {
     apiKey: "AIzaSyA57KV7h6dMQQHWTzSaM_RBJ5ox0gRU0Lk",
@@ -59,7 +59,6 @@ backButton.addEventListener("click",
 saveButton.addEventListener("click", async function() {
 
     const title = noteTitle.value;
-    const description = noteDescription.value;
     const notes = noteNotes.value;
 
     if (title.trim() === "") {
@@ -71,7 +70,6 @@ saveButton.addEventListener("click", async function() {
 
         const docRef = await addDoc(collection(db, "notes"), {
             title: title,
-            description: description,
             notes: notes,
             completed: false,
             createdAt: new Date()
@@ -85,7 +83,6 @@ saveButton.addEventListener("click", async function() {
 
         noteCard.innerHTML = `
             <h3>${title}</h3>
-            <p>${description}</p>
             <p>${notes}</p>
             <button class="completeButton">
                 Mark Completed
@@ -95,7 +92,6 @@ saveButton.addEventListener("click", async function() {
         notesGrid.appendChild(noteCard);
 
         noteTitle.value = "";
-        noteDescription.value = "";
         noteNotes.value = "";
 
         notePopup.style.display = "none";
