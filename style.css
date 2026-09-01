@@ -90,6 +90,8 @@ body {
     border-radius: 10px;
     font-size: 16px;
     font-family: Arial;
+    background-color: rgb(17, 35, 67);
+    color: white;
 }
 
 .popup {
