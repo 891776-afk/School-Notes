@@ -103,3 +103,38 @@ saveButton.addEventListener("click", async function() {
 
     }
 });
+
+async function loadNotes() {
+
+    try {
+
+        const querySnapshot = await getDocs(
+            collection(db, "notes")
+        );
+
+        querySnapshot.forEach((doc) => {
+
+            const data = doc.data();
+
+            const noteCard = document.createElement("div");
+
+            noteCard.classList.add("note-card");
+
+            noteCard.innerHTML = `
+                <h3>${data.title}</h3>
+                <p>${data.notes}</p>
+                <button class="completeButton">
+                    Mark Completed
+                </button>
+            `;
+
+            notesGrid.appendChild(noteCard);
+            
+        });
+
+    } catch (error) {
+
+        console.error("Error loading notes:", error);
+    
+    }
+}
