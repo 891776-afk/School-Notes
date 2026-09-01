@@ -6,6 +6,8 @@
     collection,
     addDoc,
     getDocs,
+    updateDoc,
+    doc
   } from "https://www.gstatic.com/firebasejs/12.18.0/firebase-firestore.js";
 
   const firebaseConfig = {
@@ -42,6 +44,15 @@ document.getElementById("noteNotes");
 
 const notesGrid =
 document.getElementById("notesGrid");
+
+const noteFilter =
+    document.getElementById("noteFilter");
+
+
+noteFilter.addEventListener(
+    "change",
+    filterNotes
+);
 
 
 noteButton.addEventListener("click",
@@ -112,30 +123,116 @@ async function loadNotes() {
             collection(db, "notes")
         );
 
-        querySnapshot.forEach((doc) => {
+        notesGrid.innerHTML = "";
 
-            const data = doc.data();
+        querySnapshot.forEach((noteDoc) => {
 
-            const noteCard = document.createElement("div");
+            const data = noteDoc.data();
 
-            noteCard.classList.add("note-card");
+            createNoteCard(
+                noteDoc.id,
+                data
+            );
 
-            noteCard.innerHTML = `
-                <h3>${data.title}</h3>
-                <p>${data.notes}</p>
-                <button class="completeButton">
-                    Mark Completed
-                </button>
-            `;
-
-            notesGrid.appendChild(noteCard);
-            
         });
+
+        filterNotes();
 
     } catch (error) {
 
         console.error("Error loading notes:", error);
-    
+
     }
 }
-loadNotes();
+
+function createNoteCard(id, data) {
+
+    const noteCard = document.createElement("div");
+
+    noteCard.classList.add("note-card");
+
+    noteCard.dataset.completed = data.completed;
+    noteCard.dataset.noteId = id;
+
+    noteCard.innerHTML = `
+        <h3>${data.title}</h3>
+        <p>${data.notes}</p>
+
+        ${
+            data.completed
+            ? `<p>✓ Completed</p>`
+            : `<button class="completeButton">
+                Mark Completed
+               </button>`
+        }
+    `;
+
+    if (!data.completed) {
+
+        const completeButton =
+            noteCard.querySelector(".completeButton");
+
+        completeButton.addEventListener(
+            "click",
+            () => completeNote(id)
+        );
+
+    }
+
+    notesGrid.appendChild(noteCard);
+}
+
+async function completeNote(id) {
+
+    try {
+
+        await updateDoc(
+            doc(db, "notes", id),
+            {
+                completed: true
+            }
+        );
+
+        loadNotes();
+
+    } catch (error) {
+
+        console.error(
+            "Error completing note:",
+            error
+        );
+
+        alert("Could not complete the note.");
+    }
+}
+
+function filterNotes() {
+
+    const filter = noteFilter.value;
+
+    const cards =
+        document.querySelectorAll(".note-card");
+
+    cards.forEach((card) => {
+
+        const completed =
+            card.dataset.completed === "true";
+
+        if (filter === "active") {
+
+            card.style.display =
+                completed ? "none" : "block";
+
+        } else if (filter === "completed") {
+
+            card.style.display =
+                completed ? "block" : "none";
+
+        } else {
+
+            card.style.display = "block";
+
+        }
+
+    });
+}

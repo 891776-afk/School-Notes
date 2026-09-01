@@ -84,6 +84,14 @@ body {
     cursor: pointer;
 }
 
+.noteFilter {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-family: Arial;
+}
+
 .popup {
     display: none;
 
