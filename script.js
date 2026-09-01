@@ -88,19 +88,7 @@ saveButton.addEventListener("click", async function() {
 
         console.log("Note saved with ID:", docRef.id);
 
-        const noteCard = document.createElement("div");
-
-        noteCard.classList.add("note-card");
-
-        noteCard.innerHTML = `
-            <h3>${title}</h3>
-            <p>${notes}</p>
-            <button class="completeButton">
-                Mark Completed
-            </button>
-        `;
-
-        notesGrid.appendChild(noteCard);
+        await loadNotes();
 
         noteTitle.value = "";
         noteNotes.value = "";
@@ -236,3 +224,4 @@ function filterNotes() {
 
     });
 }
+loadNotes();
